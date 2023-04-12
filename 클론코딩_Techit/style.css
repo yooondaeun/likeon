@@ -1,0 +1,297 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+.header-container {
+  max-width: 80rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  margin: 0 114px;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-weight: 600;
+  margin-left: 40px;
+}
+.nav-item {
+  padding: 0 16px;
+}
+.logo {
+  width: 108px;
+  height: 16px;
+}
+.my {
+  display: flex;
+  align-items: center;
+}
+.my-button {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border: none;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title-container {
+  max-width: 80rem;
+  width: 100%;
+  margin-top: 5rem;
+}
+.title-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.school-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 0 auto;
+  padding: 0 24px;
+}
+.school-list {
+  max-width: 80rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+}
+.school-img-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.school-img {
+  width: 100%;
+  height: 100%;
+}
+.school-text-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+.ing {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #1d4ed8;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-weight: 600;
+  border: 1px solid rgb(29 78 216);
+  border-radius: 4px;
+}
+.school-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 16px 0 8px 0;
+}
+.school-sub {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #222222;
+}
+.school-date {
+  color: #a3a3a3;
+  line-height: 24px;
+  margin-top: 16px;
+}
+.pre {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #059669;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-weight: 600;
+  border: 1px solid rgb(5, 150, 105);
+  border-radius: 4px;
+}
+.end {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #3f3f46;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-weight: 600;
+  border: 1px solid rgb(63, 63, 70);
+  border-radius: 4px;
+}
+footer {
+  background-color: rgb(240 244 250);
+}
+.foot-image {
+  max-width: 80rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  height: 206px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://d35ai18pny966l.cloudfront.net/course/prenotice/strip_banner_1024_prenotice.png');
+  background-position: 50%;
+  background-size: cover;
+}
+.foot-image-text {
+  width: 100%;
+  padding-top: 16px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
