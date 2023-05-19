@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Password Strength Checker JavaScript</title> 
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="container">
+          <header>Password Strength Indicator</header>
+          <form action="#">
+            <div class="field">
+                <!--키를 누르고 뗄 때 이벤트를 감지하는 Password input 생성하기 / js function trigger 사용-->
+                span class="showBtn">SHOW</span>
+            </div>
+            <div class="indicator">
+                <span class="weak"></span>
+                <span class="medium"></span>
+                <span class="strong"></span>
+            </div>
+            <div class="text"></div>
+          </form>
+      </div>
+
+      <script>
+          const indicator = document.querySelector(".indicator");
+
+          // document.querySelector() : 제공한 선택자와 일치하는 문서 내 첫 번째 Element 반환
+
+          const input = document.getElementById("PasswordInput"); //input 가져오기
+          const weak = document.getElementById("weakIndicator");
+          const medium = document.getElementById("mediumIndicator");
+          const strong = document.getElementById("strongIndicator");
+         // indicator > span 요소들 가져오기
+
+         // document.getElementById() : 주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고,
+         // 이를 나타내는 Element 객체 반환
+          
+          const text = document.getElementById("text");//text class 가져오기
+          const showBtn = document.getElementById("showBtn");// showBtn 클래스 가져오기
+        
+         let regExpWeak = /[a-z]/; //변수 1 설정
+         let regExpMedium = /[A-Z]/; //변수 2 설정
+         let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/; //변수 3 설정
+
+          function trigger(){
+            if(input.value != ""){
+              indicator.style.display = "block";
+              indicator.style.display = "flex";
+              
+              /* weak,medium,strong 조건 추가하기
+              if()no=1; 
+              if()no=2;
+              if()no=3;
+              */
+
+              //let no = 0; 
+
+              // 조건 1
+              // weak -> 3글자 이하 && 3가지 변수 중 하나 이상 사용
+              if(input.value.length <= 3 && (input.value.match(regExpWeak)) || (input.value.match(regExpMedium)) || (input.value.match(regExpStrong))){
+                no = 1;
+              }
+
+              // 조건 2
+              // medium -> 4~5글자 && 3가지 변수 중 두 개 이상 사용
+              if(input.value.length >= 6 && ((input.value.match(regExpWeak) && input.value.match(regExpMedium)) || (input.value.match(regExpMedium) && input.value.match(regExpStrong)) || (input.value.match(regExpWeak) && input.value.match(regExpStrong)))){
+                no = 2;
+              }
+
+              // 조건 3
+              // strong -> 6글자 이상 && 3가지 변수 모두 사용
+              if(input.value.length >= 6 && input.value.match(regExpWeak) && input.value.match(regExpMedium) && input.value.match(regExpStrong)){
+                no = 3;
+              }
+              
+              
+              if(no==1){
+                weak.classList.add("active");
+                text.style.display = "block";
+                
+                //  안내문구 출력
+                text.textContent = "약한 비밀번호입니다"
+                //  박스 출력
+                text.style.color = "#FF6489";
+              }else{
+                // 지정한 클래스 값 제거
+                weak.classList.remove("active");
+              }
+              
+              
+              if(no==2){
+                //medium 조건 충족할 시
+                medium.classList.add("active");
+                text.style.display = "block";
+                
+                //  안내문구 출력
+                text.textContent = "보통 비밀번호입니다"
+                //  박스 출력
+                text.style.color = "#F0C34F";
+              }else{
+                /*
+                .add된 이벤트 지워주기
+                */
+                medium.classList.remove("active");
+              }
+              
+              if(no==3){
+                //strong 조건 충족할 시
+                strong.classList.add("active");
+                text.style.display = "block";
+                
+                //  안내문구 출력
+                text.textContent = "강력한 비밀번호입니다"
+                //  박스 출력
+                text.style.color = "#5DD9B4";
+              }else{
+                /*
+                .add된 이벤트 지워주기
+                */
+                strong.classList.remove("active");
+              }
+              
+              
+              showBtn.style.display = "block";
+              showBtn.onclick = function(){
+                if(input.type == "password"){
+                  //password type text로 설정
+                  //showBtn => HIDE로 설정
+                  // 색상 설정
+                  input.type = "text";
+                  showBtn.textContent = "HIDE";
+                  showBtn.style.backgroundColor = "#5364FF";
+                }else{
+                 //password type password로 설정
+                 //showBtn => SHOW로 설정
+                 // 색상 설정
+                  input.type = "text";
+                  showBtn.textContent = "SHOW";
+                  showBtn.style.backgroundColor = "#5364FF";
+                }
+              }
+            }else{
+              indicator.style.display = "none";
+              text.style.display = "none";
+              showBtn.style.display = "none";
+            }
+          }
+      </script>
+    </body>
+</html>
